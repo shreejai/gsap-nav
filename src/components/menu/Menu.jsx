@@ -1,7 +1,9 @@
 'use client';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './menu.css';
 import Link from 'next/link';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const menuLinks = [
   {path: "/", label:"Home"},
@@ -15,9 +17,41 @@ const Menu = () => {
   const container = useRef();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const tl = useRef();
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   }
+
+  useGSAP(
+    ()=>{
+    gsap.set(".menu-link-item-holder", { y: 75 });
+
+    tl.current = gsap.timeline({ paused: true })
+    .to(".menu-overlay", {
+      duration: 1.25,
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      ease: "power4.inOut",
+    })
+    .to(".menu-link-item-holder", {
+      y: 0,
+      duration: 1,
+      stagger: 0.1,
+      ease: "power4.inOut",
+      delay: -0.75,
+    })
+    }, 
+    {scope: container}
+  );
+
+  useEffect(() => {
+    if(isMenuOpen){
+      tl.current.play();
+    }else{
+      tl.current.reverse();
+    }
+  }, [isMenuOpen])
+
   return (
     <div className='menu-container' ref={container}>
       <div className='menu-bar'>
