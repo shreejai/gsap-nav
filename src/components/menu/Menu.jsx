@@ -24,7 +24,7 @@ const Menu = () => {
         <div className='menu-logo'>
           <Link href="/">SJCODES</Link>
         </div>
-        <div className='menu-open'>
+        <div className='menu-open' onClick={toggleMenu}>
           Menu
         </div>
       </div>
@@ -33,7 +33,7 @@ const Menu = () => {
           <div className='menu-logo'>
             <Link href="/">SJCODES</Link>
           </div>
-          <div className='menu-close'>
+          <div className='menu-close' onClick={toggleMenu}>
             <p>Close</p>
           </div>
         </div>
@@ -44,7 +44,7 @@ const Menu = () => {
           <div className='menu-links'>
             {menuLinks.map((link, index) => (
               <div className='menu-link-item' key={index}>
-                <div className='menu-link-item-holder'>
+                <div className='menu-link-item-holder' onClick={toggleMenu}>
                   <Link href={link.path} className='menu-link'>
                     {link.label}
                   </Link>
