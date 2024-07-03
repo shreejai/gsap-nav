@@ -68,11 +68,8 @@ const Menu = () => {
             <Link href="/">SJCODES</Link>
           </div>
           <div className='menu-close' onClick={toggleMenu}>
-            <p>Close</p>
+            <p>CLOSE</p>
           </div>
-        </div>
-        <div className='menu-close-icon'>
-          <p>&#x2715;</p>
         </div>
         <div className='menu-copy'>
           <div className='menu-links'>
@@ -86,7 +83,13 @@ const Menu = () => {
               </div>
             ))}
           </div>
-          <div className='menu-info'>
+          
+        </div>
+        <div className='menu-preview'>
+        <div className='menu-info'>
+            {/* <div className='menu-close-icon'>
+              <p>&#x2715;</p>
+            </div> */}
             <div className='menu-info-col'>
               <a href='#'>X &#8599;</a>
               <a href='#'>Instagram &#8599;</a>
@@ -94,14 +97,10 @@ const Menu = () => {
               <a href='#'>Behance &#8599;</a>
               <a href='#'>Dribbble &#8599;</a>
             </div>
-            <div className='menu-info-col'>
-              <p>code.shreejai@gmail.com</p>
-              <p>1234 234 234</p>
+            <div className='menu-info-col' style={{maxWidth: "max-content"}}>
+              <p><a href="https://www.sjcodes.com/">www.sjcodes.com</a></p>
             </div>
           </div>
-        </div>
-        <div className='menu-preview'>
-          <p>View Showreel</p>
         </div>
       </div>
     </div>

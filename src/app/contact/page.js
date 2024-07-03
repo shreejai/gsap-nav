@@ -2,7 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>
+    <div className='page-content hero'>
       <h1>
         Contact<sup>(04)</sup>
       </h1>
