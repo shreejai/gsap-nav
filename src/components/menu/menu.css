@@ -87,6 +87,10 @@
 
 .menu-info{
   display: flex;
+  align-items: end;
+  width: 100vw;
+  padding: 0 2rem;
+  justify-content: space-between;
 }
 
 .menu-info-col{
@@ -97,9 +101,9 @@
 }
 
 @media(max-width:900px){
-  .menu-close-icon{
+  /* .menu-close-icon{
     display: none;
-  }
+  } */
 
   .menu-copy{
     padding-top: 8em;
